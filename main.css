@@ -1,0 +1,122 @@
+/* DEVELOPER: Christopher Torres (Placeholder), IS117-xxx, Fall 2025 */
+
+/* --- Custom Variables and Base Styles --- */
+:root {
+    --primary-color: #4f46e5; /* Indigo-600 */
+    --secondary-color: #6366f1; /* Indigo-500 */
+    --dark-color: #1f2937; /* Gray-800 */
+    --light-color: #f9fafb; /* Gray-50 */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-color);
+}
+
+/* --- Navigation --- */
+.navbar-brand .fa-car {
+    color: var(--primary-color);
+}
+
+/* --- Page Structure and Layout (For JavaScript routing) --- */
+.page-section {
+    display: none;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.page-section.active {
+    display: block;
+}
+
+/* --- Home Section Styling (Unique Template) --- */
+#home-section {
+    padding: 0;
+}
+
+.hero-banner {
+    background: url('https://placehold.co/1920x600/1e293b/ffffff?text=Premium+Dealership+Background') no-repeat center center;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Rounded corners for aesthetic separation from the next section */
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(31, 41, 55, 0.75); /* Dark overlay for text contrast */
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+}
+
+/* --- Cards (Required Component) --- */
+.car-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2); /* Lift and primary color shadow */
+}
+
+.car-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* --- Buttons --- */
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+/* --- Interior Page Header (Different from Home Page Template) --- */
+.interior-header {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 60vh;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+    .hero-overlay {
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+}
